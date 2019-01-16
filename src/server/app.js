@@ -1,8 +1,8 @@
 const express = require('express')
-const Routes = require('./Routes')
+const routes = require('./Routes')
 const app = express()
 const port = 2500
-const router = new Routes()
+const router = new routes()
 
 appInitializer = () => {
     router.mountRoutes(app)
