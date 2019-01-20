@@ -1,13 +1,7 @@
 const statusManager = require('../manager/status')
 
-class StatusController {
-  constructor() {
-    this.manager = new statusManager()
-  }
+const manager = new statusManager()
 
-  get(id) {
-    return this.manager.getStatusById(id)
-  }
+exports.get = function(req, res) {
+	manager.getAllStatus().then((data) => res.send(data)).catch((err) => res.send(err))
 }
-
-module.exports = StatusController
