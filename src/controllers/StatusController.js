@@ -1,7 +1,15 @@
 const statusManager = require('../manager/status')
 
-const manager = new statusManager()
+exports.getAll = async (req, res) => {
+		data = await statusManager.getAllStatus()
+		
+		res.send(data)
+}
 
 exports.get = function(req, res) {
-	manager.getAllStatus().then((data) => res.send(data)).catch((err) => res.send(err))
+	statusManager.getStatus(req.params.id).then((data) => res.send(data)).catch((err) => res.send(err))
+}
+
+exports.add = function(req, res) {
+	statusManager.addStatus(req.body).then((data) => res.send(data)).catch((err) => res.send(err))
 }

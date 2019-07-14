@@ -6,6 +6,7 @@ class Routes {
         router.get('/', (req, res) => res.send('Hello World!'))
         router.get('/status', StatusController.getAll)
         router.get('/status/:id', StatusController.get)
+        router.post('/status/add', StatusController.add)
         router.get('/priority', PriorityController.get)
     }
 }

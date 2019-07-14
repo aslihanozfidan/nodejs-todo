@@ -24,7 +24,21 @@ const getStatus = (id) => {
     });
 };
 
+const addStatus = (name) => {
+  let NewStatus = new StatusModel( name);
+
+  return NewStatus.save()
+    .exec()
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 module.exports = {
   getAllStatus,
-  getStatus
+  getStatus,
+  addStatus
 };
