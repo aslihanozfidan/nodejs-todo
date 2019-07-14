@@ -8,6 +8,7 @@ class Routes {
         router.get('/status/:id', StatusController.get)
         router.post('/status/add', StatusController.add)
         router.delete('/status/delete', StatusController.delete)
+        router.put('/status/update', StatusController.update)
         router.get('/priority', PriorityController.get)
     }
 }

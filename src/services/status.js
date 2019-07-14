@@ -37,6 +37,19 @@ const addStatus = (name) => {
     });
 };
 
+const updateStatus = (params) => {
+  console.log(params, "ON SERVICES");
+
+  return StatusModel.findOneAndUpdate({ _id: params.id }, { name: params.name }, { new: true })
+    .exec()
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 const deleteStatus = (id) => {
   return StatusModel.findOneAndDelete({ _id: id.id })
     .exec()
@@ -52,5 +65,6 @@ module.exports = {
   getAllStatus,
   getStatus,
   addStatus,
+  updateStatus,
   deleteStatus
 };

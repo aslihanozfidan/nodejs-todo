@@ -14,6 +14,11 @@ exports.add = function(req, res) {
 	statusManager.addStatus(req.body).then((data) => res.send(data)).catch((err) => res.send(err))
 }
 
+exports.update = function(req, res) {
+	console.log(req.body)
+	statusManager.updateStatus(req.body).then((data) => res.send(data)).catch((err) => res.send(err))
+}
+
 exports.delete = function(req, res) {
 	statusManager.deleteStatus(req.body).then((data) => res.send(data)).catch((err) => res.send(err))
 }
