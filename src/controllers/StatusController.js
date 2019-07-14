@@ -13,3 +13,7 @@ exports.get = function(req, res) {
 exports.add = function(req, res) {
 	statusManager.addStatus(req.body).then((data) => res.send(data)).catch((err) => res.send(err))
 }
+
+exports.delete = function(req, res) {
+	statusManager.deleteStatus(req.body).then((data) => res.send(data)).catch((err) => res.send(err))
+}

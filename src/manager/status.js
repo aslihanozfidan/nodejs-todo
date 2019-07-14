@@ -12,8 +12,13 @@ const addStatus = async (name) => {
   return StatusService.addStatus(name);
 };
 
+const deleteStatus = async (id) => {
+  return StatusService.deleteStatus(id);
+};
+
 module.exports = {
   getStatus,
   getAllStatus,
-  addStatus
+  addStatus,
+  deleteStatus
 };

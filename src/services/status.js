@@ -25,9 +25,20 @@ const getStatus = (id) => {
 };
 
 const addStatus = (name) => {
-  let NewStatus = new StatusModel( name);
+  let NewStatus = new StatusModel(name);
 
   return NewStatus.save()
+    .exec()
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+const deleteStatus = (id) => {
+  return StatusModel.findOneAndDelete({ _id: id.id })
     .exec()
     .then((data) => {
       return data;
@@ -40,5 +51,6 @@ const addStatus = (name) => {
 module.exports = {
   getAllStatus,
   getStatus,
-  addStatus
+  addStatus,
+  deleteStatus
 };
