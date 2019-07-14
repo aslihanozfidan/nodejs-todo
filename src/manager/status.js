@@ -1,19 +1,14 @@
-const StatusModel = require('../models/Status')
+const StatusService = require("../services/status");
 
-class Status {
-	getAllStatus() {
-		return StatusModel.find({
-			name: 'Silence'
-		})
-			.exec()
-			.then((docs) => {
-				console.log(docs, 'DOCS')
-				return docs
-			})
-			.catch((err) => {
-				console.log(err)
-			})
-	}
-}
+const getAllStatus = async () => {
+  return await StatusService.getAllStatus();
+};
 
-module.exports = Status
+const getStatus = async (id) => {
+  return StatusService.getStatus(id);
+};
+
+module.exports = {
+  getStatus,
+  getAllStatus
+};

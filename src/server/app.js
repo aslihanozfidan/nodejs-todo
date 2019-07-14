@@ -4,7 +4,7 @@ const app = express()
 const port = 2500
 const router = new routes()
 const connection = require('../database/connection')
-const Status = require('../models/Status')
+//const mockDataSaver = require('../data/mockDataSaver')
 
 appInitializer = () => {
     connection.getInstance()
