@@ -5,8 +5,8 @@
   "main": "./src/server/app.js",
   "scripts": {
     "test": "jest",
-    "start": "node ./src/server/app.js",
-    "dev": "nodemon ./src/server/app.js"
+    "start": "node src/server/app",
+    "dev": "nodemon src/server/app"
   },
   "author": "",
   "license": "ISC",
