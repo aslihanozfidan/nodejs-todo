@@ -1,0 +1,1 @@
+web: src/server/app.js
